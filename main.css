@@ -1,0 +1,186 @@
+*, *::before, *::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image:url('/bg2.png');
+    background-size: cover;
+    font-family: "Poiret One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.wrapper{
+    width:50%;
+    min-height:100vh;
+    position:relative;
+    top:0;
+    left:50%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.to-do-list-wrapper{
+    width:400px;
+    min-height:400px;
+    background-color:#fff;
+    border-radius:14px;
+    padding:20px 30px;
+    box-shadow: 0 0 15px #e64c05;
+    position:relative;
+    overflow-x: hidden;
+}
+
+.to-do-title{
+    font-size:44px;
+}
+
+.input-box{
+    margin:20px auto;
+    position:relative;
+}
+
+.user-input{
+    outline:none;
+    width:100%;
+    height:40px;
+    padding:0 100px 0 20px;
+    border-radius:6px;
+    border:1px solid #bebebe;
+    transition:.3s;
+}
+
+.user-input:focus{
+    border:1px solid #222;
+    transition:.3s;
+}
+
+.add-task-btn{
+    width:80px;
+    height:40px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#e64c05;
+    border-radius:6px;
+    position:absolute;
+    top:0;
+    right:0;
+    color:#fff;
+    border:1px solid #4b4a4a;
+    transition:.2s;
+}
+
+.add-task-btn:hover{
+    transition:.3s;
+    text-shadow: 0 0 10px #fff;
+    background-color:#ff590d;
+}
+.add-task-btn:active{
+    border:none;
+    background-color:#ff9a6b;
+}
+
+.tasks-container{
+    margin:30px auto;
+}
+
+.tasks-output{
+    list-style-type:none;
+    position:relative;
+    width:100%;
+    height:40px;
+    display:flex;
+    align-items:center;
+}
+
+.checkbox{
+    margin-right:10px;
+    position:relative;
+    top:0;
+}
+
+.tasks-output label{
+    font-weight:bold;
+    width:100%;
+    display:flex;
+}
+
+.task-remover{
+    position:absolute;
+    top:14px; 
+    right:10px;
+    font-weight:bold;
+    cursor: pointer;
+    transition:.3s;
+    display:inline-block;
+    width:5px;
+    height:20px;
+}
+
+.task-remover:hover{
+    transition:.3s;
+    color:#e22424;
+}
+
+.progressbar{
+    width:0%;
+    height:10px;
+    position:absolute;
+    left:0;
+    bottom:0;
+    transition:.3s;
+    border-radius: 10px;
+    background: linear-gradient(
+    90deg,
+    #FF0000, #FF7300, #FFFB00, #FF00C8, #FF0000
+    );
+    background-size:400%;
+}
+@keyframes gradient {
+    0% {
+        background-position: 80% 20%;
+    }
+    50% {
+        background-position: 20% 100%;
+    }
+    100% {
+        background-position: 80% 0%;
+    }
+}
+
+.animated-bar{
+    animation: gradient 1s linear infinite;
+}
+
+i{
+    display:inline-block;
+    width:80%;
+    overflow-x:hidden;
+}
+
+
+
+@media (min-width:300px) and (max-width:900px){
+    .wrapper{
+        width:100%;
+        left:0;
+    }
+}
+
+@media (min-width:300px) and (max-width:600px){
+    body{
+        background-image:url('/bg2-small.png');
+    }
+    .to-do-list-wrapper{
+        width:90%;
+    }
+    @media(min-width:430px) and (max-width:600px){
+        .to-do-list-wrapper{
+            width:70%;
+        }
+    }
+}
